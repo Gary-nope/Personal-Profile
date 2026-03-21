@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giaory — Digital Space</title>
+    <meta name="description" content="Giaory 的个人空间 — 开发者、创作者、探索者。在这里发现我的项目、社交动态和技术探索。">
+    <meta property="og:title" content="Giaory — Digital Space">
+    <meta property="og:description" content="Giaory 的个人空间 — 开发者、创作者、探索者。">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Taskbar-Style Navigation -->
+    <nav class="nav-bar" id="navbar">
+        <div class="nav-logo">
+            <span class="nav-logo-icon">💻</span>
+            <span class="nav-logo-text">Giaory 的个人站点</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">首页</a>
+            <a href="#github-section" class="nav-link">GitHub</a>
+            <a href="#social-section" class="nav-link">社交</a>
+            <a href="#tech-section" class="nav-link">技术栈</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="bento-container" id="home">
+
+        <!-- ===== ROW 1: Hero + GitHub Stats + Music Trigger (3 cols) ===== -->
+        <div class="bento-row">
+
+            <!-- Hero Card -->
+            <section class="bento-card hero-card">
+                <div class="card-titlebar">
+                    <span class="card-titlebar-icon">👤</span>
+                    <span class="card-titlebar-text">About Me - Giaory</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                        <button class="titlebar-btn">×</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="hero-content">
+                        <div class="hero-avatar-wrapper">
+                            <img src="https://github.com/Gary-nope.png" alt="Giaory" class="hero-avatar">
+                        </div>
+                        <div class="hero-text">
+                            <h1 class="hero-name">Giaory</h1>
+                            <div>
+                                <span class="hero-slogan" id="typewriter"></span>
+                                <span class="typewriter-cursor">▌</span>
+                            </div>
+                            <p class="hero-bio">一个热爱技术与创作的探索者。日常穿梭于代码与内容之间，专注于开源项目开发、效率工具构建和跨平台内容创作。相信技术可以改变生活，也乐于分享一路上的发现与思考。</p>
+                            <div class="hero-social-icons">
+                                <a href="https://github.com/Gary-nope" target="_blank" rel="noopener" class="social-icon-link" title="GitHub" id="social-github">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                </a>
+                                <a href="https://www.xiaohongshu.com/user/profile/63818296492" target="_blank" rel="noopener" class="social-icon-link" title="小红书 (ID: 63818296492)" id="social-xiaohongshu">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-1v-1h-1v-3h1v-1h2v1h1v3h-1v1h-1zm.5-6h-2l-.5-5h3l-.5 5z"/></svg>
+                                </a>
+                                <a href="javascript:void(0)" class="social-icon-link wechat-trigger" title="微信公众号: 什么都发的Giaory" id="social-wechat">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.03c-2.455 0-4.71.86-6.09 2.523C7.865 14.14 7.4 16.164 8.24 18.18a.568.568 0 01-.067.56c-.13.186-.283.36-.424.542l-.442.57.93-.345a.568.568 0 01.598.108c1.382 1.295 3.478 2.063 5.584 2.063 4.283 0 7.538-2.854 7.538-6.368s-3.255-6.29-7.538-6.29zm-2.905 3.15c.519 0 .94.428.94.955a.948.948 0 01-.94.955.948.948 0 01-.94-.955c0-.527.421-.955.94-.955zm5.81 0c.519 0 .94.428.94.955a.948.948 0 01-.94.955.948.948 0 01-.94-.955c0-.527.421-.955.94-.955z"/></svg>
+                                </a>
+                                <a href="#" class="social-icon-link bilibili-soon" title="B站 (即将入驻)" id="social-bilibili">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 01-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 01.16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.124.929.373.249.249.373.551.373.907 0 .355-.124.657-.373.906L17.813 4.653zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773H5.333zm4 5.146c.5 0 .833.44.833.982V15.4c0 .542-.333.982-.833.982s-.833-.44-.833-.982v-2.031c0-.542.333-.982.833-.982zm5.334 0c.5 0 .833.44.833.982V15.4c0 .542-.333.982-.833.982s-.834-.44-.834-.982v-2.031c0-.542.334-.982.834-.982z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub Quick Stats Card -->
+            <section class="bento-card github-stats-card">
+                <div class="card-titlebar">
+                    <span class="card-titlebar-icon">📊</span>
+                    <span class="card-titlebar-text">GitHub Stats</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="github-stats-grid" id="github-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-repos">—</span>
+                            <span class="stat-label">Repos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-stars">—</span>
+                            <span class="stat-label">Stars</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-followers">—</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-following">—</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Music Trigger Card (small) -->
+            <section class="bento-card music-trigger-card" id="music-trigger-card" title="点击打开音乐播放器">
+                <div class="card-titlebar">
+                    <span class="card-titlebar-icon">🎵</span>
+                    <span class="card-titlebar-text">Music Player</span>
+                </div>
+                <div class="card-body">
+                    <div class="music-trigger-content">
+                        <div class="music-disc" id="music-disc">
+                            <div class="disc-inner">🎶</div>
+                        </div>
+                        <div class="music-trigger-text">
+                            <span class="music-label">NOW PLAYING</span>
+                            <span class="music-title" id="music-trigger-title">点击播放</span>
+                        </div>
+                    </div>
+                    <div class="music-equalizer">
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                    </div>
+                    <div class="music-source-selector">
+                        <label class="source-label">📡 音源：</label>
+                        <select class="source-select" id="music-source-select">
+                            <option value="netease" selected>网易云音乐</option>
+                            <option value="bilibili">B站音乐</option>
+                        </select>
+                    </div>
+                    <button class="music-open-player-btn" id="music-open-player-btn" title="打开悬浮窗播放器">
+                        🎧 打开悬浮窗播放器
+                    </button>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ===== ROW 2: GitHub Contribution Heatmap (full width) ===== -->
+        <div class="bento-row" id="github-section">
+            <section class="bento-card heatmap-card">
+                <div class="card-titlebar">
+                    <span class="card-titlebar-icon">📈</span>
+                    <span class="card-titlebar-text">GitHub Contributions</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="heatmap-note">⚠ 注意：私有仓库的贡献不会在此图表中显示</p>
+                    <div class="heatmap-wrapper" id="github-heatmap">
+                        <img src="https://ghchart.rshah.org/006d32/Gary-nope" alt="GitHub Contribution Chart" class="heatmap-img" id="heatmap-img">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== ROW 3: Xiaohongshu + WeChat + Bilibili (3 cols) ===== -->
+        <div class="bento-row" id="social-section">
+
+            <!-- Xiaohongshu Card -->
+            <section class="bento-card xiaohongshu-card">
+                <div class="card-titlebar" style="background:#c0392b;">
+                    <span class="card-titlebar-icon">📕</span>
+                    <span class="card-titlebar-text">小红书 - Xiaohongshu</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-header">
+                        <h2>小红书</h2>
+                        <a href="https://www.xiaohongshu.com/user/profile/63818296492" target="_blank" rel="noopener" class="card-link-btn">访问主页 →</a>
+                    </div>
+                    <div class="xhs-posts" id="xhs-posts">
+                        <div class="xhs-post-placeholder">
+                            <p>📝 暂无笔记，敬请期待首次内容更新！</p>
+                            <p style="font-size:0.72rem;color:#808080;margin-top:6px;">ID: 63818296492</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WeChat Card -->
+            <section class="bento-card wechat-card">
+                <div class="card-titlebar" style="background:#1a7f37;">
+                    <span class="card-titlebar-icon">💬</span>
+                    <span class="card-titlebar-text">微信公众号</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="wechat-content">
+                        <div class="wechat-name-card">
+                            <span class="wechat-label">公众号名称</span>
+                            <span class="wechat-name">什么都发的Giaory</span>
+                            <button class="copy-btn" id="copy-wechat-name" data-copy="什么都发的Giaory" title="复制名称">📋</button>
+                        </div>
+                        <p class="wechat-desc">微信搜索关注，获取更多精彩内容 ✨</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bilibili Card -->
+            <section class="bento-card bilibili-card">
+                <div class="card-titlebar" style="background:#0078d4;">
+                    <span class="card-titlebar-icon">📺</span>
+                    <span class="card-titlebar-text">Bilibili</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="bilibili-coming">
+                        <div class="coming-soon-badge">即将入驻</div>
+                        <p class="coming-soon-text">敬请期待 Giaory 的视频内容 🎬</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ===== ROW 4: Tech Stack (full width) ===== -->
+        <div class="bento-row" id="tech-section">
+            <section class="bento-card tech-card">
+                <div class="card-titlebar">
+                    <span class="card-titlebar-icon">⚡</span>
+                    <span class="card-titlebar-text">Tech Stack & Exploration</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tech-grid">
+                        <div class="tech-tag"><span class="tech-dot" style="background:#f7df1e"></span>JavaScript</div>
+                        <div class="tech-tag"><span class="tech-dot" style="background:#61dafb"></span>React</div>
+                        <div class="tech-tag"><span class="tech-dot" style="background:#3776ab"></span>Python</div>
+                        <div class="tech-tag"><span class="tech-dot" style="background:#e34f26"></span>HTML/CSS</div>
+                        <div class="tech-tag"><span class="tech-dot" style="background:#f05032"></span>Git</div>
+                        <div class="tech-tag"><span class="tech-dot" style="background:#339933"></span>Node.js</div>
+                        <div class="tech-tag"><span class="tech-dot" style="background:#007acc"></span>VS Code</div>
+                        <div class="tech-tag"><span class="tech-dot" style="background:#ff6f61"></span>开源贡献</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== ROW 5: Projects (full width) ===== -->
+        <div class="bento-row">
+            <section class="bento-card projects-card">
+                <div class="card-titlebar">
+                    <span class="card-titlebar-icon">📁</span>
+                    <span class="card-titlebar-text">Recent Projects</span>
+                    <div class="card-titlebar-btns">
+                        <button class="titlebar-btn">_</button>
+                        <button class="titlebar-btn">□</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-header">
+                        <h2>近期项目</h2>
+                        <a href="https://github.com/Gary-nope?tab=repositories" target="_blank" rel="noopener" class="card-link-btn">查看全部 →</a>
+                    </div>
+                    <div class="projects-grid" id="github-projects">
+                        <div class="project-placeholder">
+                            <div class="xhs-shimmer"></div>
+                            <p>加载中...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Built with ❤️ by <strong>Giaory</strong> &copy; 2026</p>
+            <p class="footer-sub">Powered by curiosity and late-night debugging ☕</p>
+        </div>
+    </footer>
+
+    <!-- Floating Music Player (Draggable, Win95 Style) -->
+    <div class="music-player-float" id="music-player" style="display:none;">
+        <div class="player-drag-handle" id="player-drag-handle">
+            <span class="player-title-bar">🎵 Music Player</span>
+            <button class="player-close-btn" id="player-close" title="关闭">×</button>
+        </div>
+        <div class="player-search-wrapper">
+            <input type="text" class="player-search-input" id="player-search-input" placeholder="搜索歌曲...">
+            <button class="player-search-btn" id="player-search-btn">搜索</button>
+        </div>
+        <div class="player-search-results" id="player-search-results"></div>
+        <div class="player-body">
+            <div class="player-info">
+                <div class="player-song-name" id="player-song-name">未在播放</div>
+                <div class="player-artist" id="player-artist">—</div>
+            </div>
+            <div class="player-progress-wrapper">
+                <div class="player-progress-bar" id="player-progress-bar">
+                    <div class="player-progress-fill" id="player-progress-fill"></div>
+                    <div class="player-progress-thumb" id="player-progress-thumb"></div>
+                </div>
+                <div class="player-time">
+                    <span id="player-current-time">0:00</span>
+                    <span id="player-total-time">0:00</span>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button class="player-btn" id="player-prev" title="上一首">⏮</button>
+                <button class="player-btn player-btn-main" id="player-play" title="播放/暂停">▶</button>
+                <button class="player-btn" id="player-next" title="下一首">⏭</button>
+                <button class="player-btn" id="player-download" title="下载当前歌曲">💾</button>
+            </div>
+            <div class="player-volume-wrapper">
+                <span class="volume-icon">🔊</span>
+                <input type="range" class="player-volume" id="player-volume" min="0" max="100" value="60">
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="copy-toast">已复制到剪贴板！</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/github.js"></script>
+    <script src="js/music-player.js"></script>
+</body>
+</html>
