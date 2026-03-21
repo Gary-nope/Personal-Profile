@@ -164,31 +164,6 @@ a:hover {
     background: var(--win-gray);
 }
 
-/* Language Toggle Button */
-.lang-toggle-btn {
-    font-family: var(--font-main);
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 3px 10px;
-    height: 26px;
-    background: var(--win-gray-light);
-    color: var(--win-black);
-    border: 2px outset var(--win-gray);
-    cursor: pointer;
-    white-space: nowrap;
-    margin-left: 6px;
-    letter-spacing: 0.5px;
-    transition: all 0.1s;
-}
-
-.lang-toggle-btn:hover {
-    background: var(--win-blue);
-    color: var(--win-white);
-}
-
-.lang-toggle-btn:active {
-    border-style: inset;
-}
 /* ========== MAIN CONTAINER ========== */
 .bento-container {
     position: relative;
