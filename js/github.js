@@ -50,7 +50,7 @@
 
         if (!projects || projects.length === 0) {
             const msg = (typeof I18N !== 'undefined' && typeof currentLang !== 'undefined') ? I18N[currentLang]['projects.empty'] : '还没有公开项目，敬请期待！ 🚀';
-            container.innerHTML = '<div class="project-placeholder"><p>' + msg + '</p></div>';
+            container.innerHTML = '<div class="project-placeholder"><p data-i18n="projects.empty">' + msg + '</p></div>';
             return;
         }
 
@@ -95,7 +95,7 @@
             const container = document.getElementById('github-projects');
             if (container) {
                 const msg = (typeof I18N !== 'undefined' && typeof currentLang !== 'undefined') ? I18N[currentLang]['projects.loadFail'] : '项目加载失败，请稍后再试 🔄';
-                container.innerHTML = '<div class="project-placeholder"><p>' + msg + '</p></div>';
+                container.innerHTML = '<div class="project-placeholder"><p data-i18n="projects.loadFail">' + msg + '</p></div>';
             }
         }
     }
@@ -113,7 +113,7 @@
                         const viewMsg = (typeof I18N !== 'undefined' && typeof currentLang !== 'undefined') ? I18N[currentLang]['heatmap.viewOnGH'] : '在 GitHub 上查看';
                         wrapper.innerHTML = `
                     <div style="text-align:center; padding:20px; color:var(--text-muted); font-size:0.85rem;">
-                        ${failMsg}，<a href="https://github.com/${GITHUB_USERNAME}" target="_blank">${viewMsg}</a>
+                        <span data-i18n="heatmap.fail">${failMsg}</span>，<a href="https://github.com/${GITHUB_USERNAME}" target="_blank" data-i18n="heatmap.viewOnGH">${viewMsg}</a>
                     </div>
                 `;
             }
