@@ -181,7 +181,7 @@ a:hover {
     color: var(--win-black);
     white-space: nowrap;
     flex-shrink: 0;
-    margin-left: 4px;
+    margin-left: auto;
 }
 
 .nav-lang-btn:hover {
