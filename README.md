@@ -160,6 +160,14 @@ Want to make it yours? Here are the key files to modify:
 - Thanks to the open-source community for endless inspiration.
 - 感谢开源社区带来的无尽灵感。
 
+## License | 许可证 📄
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License** ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)).
+本项目采用 **署名-非商业性使用 4.0 国际许可协议** ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)) 进行许可。
+
+You are free to share and adapt the material, provided you give appropriate credit and do not use the material for commercial purposes.
+您可以在给出适当署名且不以商业目的使用的情况下，自由地共享和演绎本素材。
+
 ---
 
 <p align="center">
