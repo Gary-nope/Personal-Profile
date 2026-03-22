@@ -1,10 +1,18 @@
 {
   "stats": {
-    "public_repos": 0,
-    "followers": 0,
-    "following": 0,
+    "public_repos": 1,
+    "followers": 1,
+    "following": 5,
     "stars": 0
   },
-  "projects": [],
-  "updated_at": "2026-03-22T00:00:00.000Z"
+  "projects": [
+    {
+      "name": "python-code",
+      "description": "some little interesting games or code or survey of python",
+      "html_url": "https://github.com/Gary-nope/python-code",
+      "language": "",
+      "stars": 0
+    }
+  ],
+  "updated_at": "2026-03-22T04:10:49.304Z"
 }
