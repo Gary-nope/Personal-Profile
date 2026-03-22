@@ -40,6 +40,12 @@
     audio.volume = 0.6;
     audio.preload = 'metadata';
 
+    // ====== Win95 Pixel SVG Icons ======
+    const SVG_PLAY = '<svg viewBox="0 0 14 14" width="16" height="16" fill="currentColor" style="shape-rendering:crispEdges"><polygon points="4,2 4,12 12,7"/></svg>';
+    const SVG_PAUSE = '<svg viewBox="0 0 14 14" width="16" height="16" fill="currentColor" style="shape-rendering:crispEdges"><rect x="3" y="2" width="3" height="10"/><rect x="8" y="2" width="3" height="10"/></svg>';
+    const SVG_LOOP_LIST = '<svg viewBox="0 0 14 14" width="14" height="14" fill="currentColor" style="shape-rendering:crispEdges"><path d="M2 3h8v1h1v1h1v2h-2V6h-1V5H3v2H1V5h1V4h0V3zM12 11H4v-1H3v-1H2V7h2v1h1v1h6V7h2v2h-1v1h0v1z"/><path d="M11 2h2v1h-1v1h-1V2zM3 12H1v-1h1v-1h1v2z"/></svg>';
+    const SVG_LOOP_SINGLE = '<svg viewBox="0 0 14 14" width="14" height="14" fill="currentColor" style="shape-rendering:crispEdges"><path d="M2 3h8v1h1v1h1v2h-2V6h-1V5H3v2H1V5h1V4h0V3zM12 11H4v-1H3v-1H2V7h2v1h1v1h6V7h2v2h-1v1h0v1z"/><path d="M11 2h2v1h-1v1h-1V2zM3 12H1v-1h1v-1h1v2z"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="5" width="1" height="4"/></svg>';
+
     // ====== Get selected source ======
     function getSource() {
         return sourceSelect ? sourceSelect.value : 'netease';
@@ -159,13 +165,13 @@
         progressFill.style.width = '0%';
         currentTimeEl.textContent = '0:00';
         totalTimeEl.textContent = formatTime(track.duration);
-        playBtn.textContent = '⏳';
+        playBtn.innerHTML = '<svg viewBox="0 0 14 14" width="16" height="16" fill="currentColor" style="shape-rendering:crispEdges"><rect x="5" y="1" width="4" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="4"/><rect x="10" y="3" width="1" height="4"/><rect x="3" y="7" width="1" height="4"/><rect x="10" y="7" width="1" height="4"/><rect x="4" y="11" width="1" height="1"/><rect x="9" y="11" width="1" height="1"/><rect x="5" y="12" width="4" height="1"/><rect x="7" y="3" width="1" height="4"/><rect x="6" y="7" width="1" height="1"/><rect x="7" y="8" width="2" height="1"/></svg>';
 
         const url = await getPlayUrl(track);
 
         if (!url) {
             songNameEl.textContent = '⚠ 无法获取播放链接';
-            playBtn.textContent = '▶';
+            playBtn.innerHTML = SVG_PLAY;
             return;
         }
 
@@ -175,12 +181,12 @@
         try {
             await audio.play();
             isPlaying = true;
-            playBtn.textContent = '⏸';
+            playBtn.innerHTML = SVG_PAUSE;
             triggerCard.classList.add('playing');
         } catch (err) {
             console.error('Playback error:', err);
             songNameEl.textContent = '⚠ 播放失败';
-            playBtn.textContent = '▶';
+            playBtn.innerHTML = SVG_PLAY;
             isPlaying = false;
         }
     }
@@ -188,8 +194,8 @@
     // ====== Controls ======
     playBtn.addEventListener('click', () => {
         if (currentIndex < 0) return;
-        if (isPlaying) { audio.pause(); isPlaying = false; playBtn.textContent = '▶'; triggerCard.classList.remove('playing'); }
-        else { audio.play().catch(() => { songNameEl.textContent = '⚠ 播放失败'; }); isPlaying = true; playBtn.textContent = '⏸'; triggerCard.classList.add('playing'); }
+        if (isPlaying) { audio.pause(); isPlaying = false; playBtn.innerHTML = SVG_PLAY; triggerCard.classList.remove('playing'); }
+        else { audio.play().catch(() => { songNameEl.textContent = '⚠ 播放失败'; }); isPlaying = true; playBtn.innerHTML = SVG_PAUSE; triggerCard.classList.add('playing'); }
     });
 
     prevBtn.addEventListener('click', () => { if (playlist.length) playSong((currentIndex - 1 + playlist.length) % playlist.length); });
@@ -200,11 +206,11 @@
         loopModeBtn.addEventListener('click', () => {
             if (loopMode === 'list') {
                 loopMode = 'single';
-                loopModeBtn.textContent = '🔂';
+                loopModeBtn.innerHTML = SVG_LOOP_SINGLE;
                 loopModeBtn.title = '单曲循环';
             } else {
                 loopMode = 'list';
-                loopModeBtn.textContent = '🔁';
+                loopModeBtn.innerHTML = SVG_LOOP_LIST;
                 loopModeBtn.title = '列表循环';
             }
         });

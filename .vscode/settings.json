@@ -1,3 +1,6 @@
 {
-    "autoAcceptFree.antigravityExecutablePath": "D:\\Program Files\\Antigravity\\Antigravity.exe"
+    "autoAcceptFree.antigravityExecutablePath": "D:\\Program Files\\Antigravity\\Antigravity.exe",
+    "github-actions.workflows.pinned.workflows": [
+        ".github/workflows/update-stats.yml"
+    ]
 }
