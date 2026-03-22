@@ -71,8 +71,6 @@ jobs:
       - name: Download contribution heatmap
         run: |
           curl -fsSL -o data/heatmap.svg "https://ghchart.rshah.org/006d32/Gary-nope" || echo '⚠️ Heatmap download failed, keeping previous version'
-          # Strip XML declaration and DOCTYPE to ensure clean SVG loading
-          sed -i 's/<\?xml[^?]*\?>//g; s/<!DOCTYPE[^>]*>//g' data/heatmap.svg 2>/dev/null || true
 
       - name: Commit and push if changed
         run: |
