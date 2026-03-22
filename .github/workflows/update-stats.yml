@@ -68,9 +68,13 @@ jobs:
             console.log('✅ GitHub stats updated:', JSON.stringify(data.stats));
             console.log('📦 Projects:', projects.map(p => p.name).join(', '));
 
+      - name: Download contribution heatmap
+        run: |
+          curl -fsSL -o data/heatmap.svg "https://ghchart.rshah.org/006d32/Gary-nope" || echo '⚠️ Heatmap download failed, keeping previous version'
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/github-stats.json
+          git add data/
           git diff --staged --quiet || (git commit -m "chore: auto-update GitHub stats [skip ci]" && git push)
