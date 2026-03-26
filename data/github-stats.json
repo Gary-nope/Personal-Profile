@@ -7,17 +7,17 @@
   },
   "projects": [
     {
-      "name": "AI-Drum-Transcriber-Workflow",
-      "description": "A zero-cost, high-accuracy workflow using open-source AI tools to extract pure drum tracks and convert audio to standard drum sheet music.",
-      "html_url": "https://github.com/Gary-nope/AI-Drum-Transcriber-Workflow",
-      "language": "Jupyter Notebook",
-      "stars": 0
-    },
-    {
       "name": "Windows95-Personal-Profile",
       "description": "My personal profile with Windows-95 theme.",
       "html_url": "https://github.com/Gary-nope/Windows95-Personal-Profile",
       "language": "JavaScript",
+      "stars": 0
+    },
+    {
+      "name": "AI-Drum-Transcriber-Workflow",
+      "description": "A zero-cost, high-accuracy workflow using open-source AI tools to extract pure drum tracks and convert audio to standard drum sheet music.",
+      "html_url": "https://github.com/Gary-nope/AI-Drum-Transcriber-Workflow",
+      "language": "Jupyter Notebook",
       "stars": 0
     },
     {
@@ -28,5 +28,5 @@
       "stars": 0
     }
   ],
-  "updated_at": "2026-03-26T16:58:50.113Z"
+  "updated_at": "2026-03-26T20:34:05.389Z"
 }
