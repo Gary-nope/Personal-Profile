@@ -1,6 +1,6 @@
 {
   "stats": {
-    "public_repos": 2,
+    "public_repos": 3,
     "followers": 1,
     "following": 5,
     "stars": 0
@@ -14,6 +14,13 @@
       "stars": 0
     },
     {
+      "name": "AI-Drum-Transcriber-Workflow",
+      "description": "A zero-cost, high-accuracy workflow using open-source AI tools to extract pure drum tracks and convert audio to standard drum sheet music.",
+      "html_url": "https://github.com/Gary-nope/AI-Drum-Transcriber-Workflow",
+      "language": "Jupyter Notebook",
+      "stars": 0
+    },
+    {
       "name": "python-code",
       "description": "some little interesting games or code or survey of python",
       "html_url": "https://github.com/Gary-nope/python-code",
@@ -21,5 +28,5 @@
       "stars": 0
     }
   ],
-  "updated_at": "2026-03-24T08:51:21.803Z"
+  "updated_at": "2026-03-30T05:42:14.845Z"
 }
